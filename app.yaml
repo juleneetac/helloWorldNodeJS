@@ -44,7 +44,8 @@ objects:
             app: ${APP}
         spec:
           containers:
-            - image: docker-registry.default.svc:5000/${PROJECT}/${APP}:latest
+            - image: 172.30.1.1:5000/${PROJECT}/${APP}:latest
+              #image: docker-registry.default.svc:5000/${PROJECT}/${APP}:latest
               name: ${APP}
               livenessProbe:
                 failureThreshold: 3
@@ -99,10 +100,10 @@ objects:
       labels:
         app: ${APP}        
     spec:
-      host: ${APP}-${PROJECT}.dev.aws.seat.cloud.vwgroup.com
-      tls:
-        insecureEdgeTerminationPolicy: Redirect
-        termination: edge
+      # host: ${APP}-${PROJECT}.dev.aws.seat.cloud.vwgroup.com      #Dejo que genere una Route por defecto por eso lo comento
+      # tls:
+      #   insecureEdgeTerminationPolicy: Redirect
+      #   termination: edge
       to:
         kind: Service
         name: ${APP}-svc
