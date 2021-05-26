@@ -169,12 +169,12 @@ pipeline {
             steps {
                 echo "==== Build Image Stage ===="
 
-                sh "rm -rf oc-build && mkdir oc-build && mkdir oc-build/views"
+                sh "rm -rf oc-build && mkdir oc-build"  //  && mkdir oc-build/views"
                 sh "cp Dockerfile oc-build/Dockerfile"
                 sh "cp package.json oc-build/package.json"
 
-                sh "cp server.js oc-build/server.js"
-                sh "cp views/index.html oc-build/views/index.html"
+                sh "cp index.js oc-build/index.js"  //cambiado server.js por index.js
+                // sh "cp views/index.html oc-build/views/index.html"
 
                 script {
                     openshift.withCluster() {
