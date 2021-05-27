@@ -52,7 +52,7 @@ pipeline {
             container('seapdl-sonar-scanner'){
                     echo "==== Analyze App Stage ===="
                     script {
-                        sh "sonar-scanner -Dsonar.host.url=http://sonarqube-nexson.192.168.99.108.nip.io -Dsonar.login=${SONAR_TOKEN} -Dsonar.projectName=${SONAR_PROJECT} -Dsonar.projectKey=${SONAR_PROJECT}"
+                        sh "sonar-scanner -Dsonar.host.url=http://sonarqube-nexson.192.168.99.110.nip.io -Dsonar.login=${SONAR_TOKEN} -Dsonar.projectName=${SONAR_PROJECT} -Dsonar.projectKey=${SONAR_PROJECT}"
                     }
                 }
             }
