@@ -8,7 +8,8 @@ ADD index.js /tmp/src/index.js
 
 #ADD views/index.html /tmp/src/views/index.html
 
-
+#Dar permisos para editar lo que hay en esta carpeta 
+RUN chmod -R +x /home/jenkins
 
 RUN chown -R 1001:0 /tmp/src
 RUN chown -R 1001:0 /tmp/src/views

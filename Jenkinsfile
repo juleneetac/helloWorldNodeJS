@@ -128,7 +128,7 @@ pipeline {
                     sh "echo ${repoName}"
 
                     sh "zip -r '$APP'-'$VERSION'.zip  ."
-                    sh "curl --header 'Content-Type: application/x-7z-compressed' --upload-file '$APP'-'$VERSION'.zip -u '$NEXUS_USERNAME':'$NEXUS_PASSWORD' -v 'http://nexus-nexson.192.168.99.108.nip.io/repository/$repoName/'"
+                    sh "curl --header 'Content-Type: application/x-7z-compressed' --upload-file '$APP'-'$VERSION'.zip -u '$NEXUS_USERNAME':'$NEXUS_PASSWORD' -v 'http://nexus-nexson.192.168.99.110.nip.io/repository/$repoName/'"
                 }
             }
         }
