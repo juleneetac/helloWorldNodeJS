@@ -41,7 +41,7 @@ pipeline {
                     script {
                         PWD = sh ( script: 'pwd', returnStdout: true).trim()
                         sh "npm install"
-                        sh "npm test"
+                        sh "npm test"  //por el momento lo quito porque no hace nincun test
                     }
 
                 }
