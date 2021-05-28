@@ -23,7 +23,8 @@ pipeline {
                         PWD = sh ( script: 'pwd', returnStdout: true).trim()
                         sh "echo ${PWD}"
                         sh "ls -ltr"
-                        sh "npm install"
+                        // sh "npm install"
+                        sh "npm install -g --unsafe-perm=true --allow-root"
                         sh "ls -ltr"
 
                     }
