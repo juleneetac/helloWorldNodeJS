@@ -5,7 +5,7 @@ var server   = require('../index'),
 
 chai.use(chaiHTTP);
 
-reqServer = process.env.HTTP_TEST_SERVER || server
+reqServer = 'http://localhost:8080'
 
 describe('Basic routes tests', function() {
 
