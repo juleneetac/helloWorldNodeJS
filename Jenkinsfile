@@ -12,6 +12,7 @@ pipeline {
         NEXUS_AUTH = credentials("${PROJECT}-nexus-credentials")
         NEXUS_USERNAME = "${NEXUS_AUTH_USR}"
         NEXUS_PASSWORD = "${NEXUS_AUTH_PSW}"
+        HOME = '.'
     }
     stages {
 
@@ -23,8 +24,7 @@ pipeline {
                         PWD = sh ( script: 'pwd', returnStdout: true).trim()
                         sh "echo ${PWD}"
                         sh "ls -ltr"
-                        // sh "npm install"
-                        sh "npm install -g --unsafe-perm=true --allow-root"
+                        sh "npm install"
                         sh "ls -ltr"
 
                     }
