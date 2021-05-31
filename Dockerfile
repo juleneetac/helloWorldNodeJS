@@ -6,7 +6,7 @@ USER 0
 ADD package.json /tmp/src/package.json
 ADD index.js /tmp/src/index.js
 
-#ADD views/index.html /tmp/src/views/index.html
+ADD views/index.html /tmp/src/views/index.html
 
 
 RUN chown -R 1001:0 /tmp/src
