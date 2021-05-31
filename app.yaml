@@ -44,12 +44,9 @@ objects:
             app: ${APP}
         spec:
           containers:
-            - image: 172.30.1.1:5000/${PROJECT}/${APP}
+            - image: 172.30.1.1:5000/${PROJECT}/${APP}:latest
             # - image: docker-registry.default.svc:5000/${PROJECT}/${APP}:latest
               name: ${APP}
-              tags:
-                - items:
-                  tag: latest
               livenessProbe:
                 failureThreshold: 3
                 httpGet:
