@@ -1,9 +1,10 @@
 var express = require('express');
 var app = express();
+app.engine('html', require('ejs').renderFile);
 
 app.get('/', function (req, res) {
-  res.send('Hello World edit!');
-  res.render('index.html', { message : "Hello World edit!"})
+  //res.send('Hello World edit!');
+  res.render('index.html', { message : 'Hello World edit!'})
 });
 
 // app.get('/fun', function (req, res) {
