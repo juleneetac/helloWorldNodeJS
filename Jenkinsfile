@@ -171,19 +171,19 @@ pipeline {
             steps {
                 echo "==== Build Image Stage ===="
 
-                sh "rm -rf oc-build && mkdir oc-build && mkdir oc-build/views"
-                sh "cp Dockerfile oc-build/Dockerfile"
-                sh "cp package.json oc-build/package.json"
+                sh "rm -rf dockerfile && mkdir dockerfile && mkdir dockerfile/views"
+                sh "cp Dockerfile dockerfile/Dockerfile"
+                sh "cp package.json dockerfile/package.json"
 
-                sh "cp index.js oc-build/index.js"  //cambiado server.js por index.js
-                sh "cp views/index.html oc-build/views/index.html"
+                sh "cp index.js dockerfile/index.js"  //cambiado server.js por index.js
+                sh "cp views/index.html dockerfile/views/index.html"
                 sh "ls -lrt"
-                sh "ls -lrt ./oc-build"
+                sh "ls -lrt ./dockerfile"
 
                 script {
                     openshift.withCluster() {
                         openshift.withProject("${PROJECT}") {
-                            openshift.selector("bc", "${APP}").startBuild("--from-dir=oc-build", "--wait=true")
+                            openshift.selector("bc", "${APP}").startBuild("--from-dir=dockerfile", "--wait=true")
                         }
                     }
                 }
