@@ -176,6 +176,7 @@ pipeline {
 
                 sh "cp index.js oc-build/index.js"  //cambiado server.js por index.js
                 sh "cp views/index.html oc-build/views/index.html"
+                sh "ls -lrt"
 
                 script {
                     openshift.withCluster() {
