@@ -176,7 +176,7 @@ pipeline {
                 sh "cp package.json oc-build/package.json"
 
                 sh "cp index.js oc-build/index.js"  //cambiado server.js por index.js
-                sh "cp views/index.html v/views/index.html"
+                sh "cp views/index.html oc-build/views/index.html"
                 sh "ls -lrt"
                 sh "ls -lrt ./oc-build"
 
