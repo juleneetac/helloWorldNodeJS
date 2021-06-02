@@ -158,7 +158,7 @@ pipeline {
 
                             // if (fileExists('Dockerfile'))
                             //  readFile('Dockerfile').split('\n').find { l -> !l.startsWith("#") && l.contains("FROM") }.with { if (it) dockerImage = (it - 'FROM').trim() }
-                            openshift.newBuild("--name=${APP}", "-l app=${APP}", "--strategy=docker", "--binary=true", "--to=${APP}")
+                            openshift.newBuild("--name=${APP}", "-l app=${APP}", "--strategy=docker", "--binary=true", "--to=${APP}:latest")
                             //el --binary=true hay unas restricciones que fuerza 
                         }
                     }
