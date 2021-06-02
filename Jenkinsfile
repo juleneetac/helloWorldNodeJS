@@ -154,10 +154,10 @@ pipeline {
 
                         openshift.withProject("${PROJECT}") {
                             // Will use default image if Dockerfile does not exists or if the file has no FROM instruction
-                            // def dockerImage = 'registry.redhat.io/openshift3/ose-docker-builder:v3.11'
+                            def dockerImage = 'registry.redhat.io/openshift3/ose-docker-builder:v3.11'
 
-                            // if (fileExists('Dockerfile'))
-                            //  readFile('Dockerfile').split('\n').find { l -> !l.startsWith("#") && l.contains("FROM") }.with { if (it) dockerImage = (it - 'FROM').trim() }
+                            if (fileExists('Dockerfile'))
+                                readFile('Dockerfile').split('\n').find { l -> !l.startsWith("#") && l.contains("FROM") }.with { if (it) dockerImage = (it - 'FROM').trim() }
                             openshift.newBuild("--name=${APP}", "-l app=${APP}", "--strategy=docker", "--binary=true", "--to=${APP}:latest")
                             //el --binary=true hay unas restricciones que fuerza 
                         }
