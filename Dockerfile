@@ -14,6 +14,7 @@ RUN chown -R 1001:0 /tmp/src
 RUN chown -R 1001:0 /tmp/src/views
 USER 1001
 
+RUN ls /usr
 # Install the dependencies
 RUN /usr/libexec/s2i/assemble
 EXPOSE 8080
