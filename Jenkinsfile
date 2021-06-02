@@ -183,7 +183,7 @@ pipeline {
                 script {
                     openshift.withCluster() {
                         openshift.withProject("${PROJECT}") {
-                            openshift.selector("bc", "${APP}").startBuild("--from-dir=./oc-build", "--wait=true")
+                            openshift.selector("bc", "${APP}").startBuild("--from-dir=oc-build", "--wait=true")
                         }
                     }
                 }
