@@ -1,6 +1,6 @@
 #FROM docker-registry.default.svc:5000/localdemo/nodejs-14:latest
 #FROM 172.30.1.1:5000/localdemo/hello:latest
-FROM ubi8/nodejs-14
+FROM registry.access.redhat.com/ubi8/nodejs-14:latest
 #Add application sources to a directory that the assemble script expects them
 #and set permissions so that the container runs without root access
 USER 0
