@@ -1,6 +1,6 @@
 #FROM docker-registry.default.svc:5000/localdemo/nodejs-14:latest
 #FROM 172.30.1.1:5000/localdemo/hello:latest
-FROM registry.access.redhat.com/openshift3/ose-docker-builder:v3.11
+FROM centos:centos7
 # Add application sources to a directory that the assemble script expects them
 # and set permissions so that the container runs without root access
 USER 0
