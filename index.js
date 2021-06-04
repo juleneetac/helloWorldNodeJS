@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+app.disable("x-powered-by");
 app.engine('html', require('ejs').renderFile);
 
 app.get('/', function (req, res) {
